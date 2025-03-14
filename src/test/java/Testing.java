@@ -12,11 +12,14 @@ public static void main(String[] args){
     WebDriver driver = new ChromeDriver();
     driver.get("https://www.automationexercise.com");
     driver.manage().window().maximize();
+
     driver.findElement(By.linkText("Signup / Login")).click();
     WebElement emailInput = driver.findElement(By.name("email"));
     emailInput.sendKeys("sohilaibrahim16@yahoo.com");
+
     WebElement passwordInput = driver.findElement(By.name("password"));
     passwordInput.sendKeys("123456");
+
     WebElement loginButton = driver.findElement(By.xpath("//button[@data-qa='login-button']"));
     loginButton.click();
 

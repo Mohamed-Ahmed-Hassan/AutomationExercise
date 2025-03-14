@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 public class Login
 {
-
     WebDriver driver;
     @BeforeMethod
     public void setup() {
@@ -19,7 +18,6 @@ public class Login
         driver.manage().window().maximize();
         driver.get("https://www.automationexercise.com");
     }
-
     @Test
     public void Login() {
         driver.findElement(By.linkText("Signup / Login")).click();
