@@ -15,30 +15,28 @@ import java.time.Duration;
 public class ExerciseTest {
 
     public WebDriver driver;
-
     @BeforeMethod
-    public void setup() {
+        public void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://www.automationexercise.com/");
         driver.manage().window().maximize();
-    }
+        }
 
-    @Test
-    public void signup() {
-        WebElement signupLoginBtn = driver.findElement(By.linkText("Signup / Login"));
-        signupLoginBtn.click();
+        @Test
+        public void signup(){
+            WebElement signupLoginBtn = driver.findElement(By.linkText("Signup / Login"));
+            signupLoginBtn.click();
 
-        WebElement nameField = driver.findElement(By.name("name"));
-        nameField.sendKeys("Mohamed");
+            WebElement nameField = driver.findElement(By.name("name"));
+            nameField.sendKeys("Mohamed");
 
-        WebElement email = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        email.sendKeys("hassan@atos.net");
+            WebElement email = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
+            email.sendKeys("hassan@atos.net");
 
-        WebElement signupBtn = driver.findElement(By.xpath("//button[text()='Signup']"));
-        signupBtn.click();
-    }
-
+            WebElement signupBtn = driver.findElement(By.xpath("//button[text()='Signup']"));
+            signupBtn.click();
+        }
 
     //By Mina Kamel
 
@@ -68,10 +66,12 @@ public class ExerciseTest {
     }
 
 
+
     @AfterMethod
-    public void closeBrowser() {
+        public void closeBrowser(){
         driver.quit();
-    }
+        }
+
 
 
 }
