@@ -42,6 +42,7 @@ public class ExerciseTest {
                 System.out.println("Test Failed: Username did not appear after login."); // I found this on internet
             }
 
+
         }
 
         @AfterMethod
