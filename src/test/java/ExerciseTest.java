@@ -18,7 +18,7 @@ public class ExerciseTest {
         driver.manage().window().maximize();
         }
 
-        @Test
+       /* @Test
         public void signup(){
             WebElement signupLoginBtn = driver.findElement(By.linkText("Signup / Login"));
             signupLoginBtn.click();
@@ -31,13 +31,26 @@ public class ExerciseTest {
 
             WebElement signupBtn = driver.findElement(By.xpath("//button[text()='Signup']"));
             signupBtn.click();
+        }*/
+    @Test
+        public void login(){
+        WebElement signupLoginBtn = driver.findElement(By.linkText("Signup / Login"));
+        signupLoginBtn.click();
+        WebElement email = driver.findElement(By.xpath("//input[@data-qa='login-email']"));
+        email.sendKeys("noraa8119@gmail.com");
+        WebElement password = driver.findElement(By.xpath("//input[@data-qa='login-password']"));
+        password.sendKeys("123456789");
+
+        WebElement loginbtn=driver.findElement(By.xpath("//button[text()='Login']"));
+        loginbtn.click();
+
         }
 
 
-        @AfterMethod
-        public void closeBrowser(){
-        driver.quit();
-        }
+       // @AfterMethod
+        //public void closeBrowser(){
+        //driver.quit();
+        //}
 
 
 
