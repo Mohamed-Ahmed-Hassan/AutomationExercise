@@ -38,7 +38,7 @@ public class ExerciseTest {
         WebElement WelcomeText=driver.findElement(By.xpath("a[contains(text(), ' Logged in as Waad Mahmoud')]"));
         if(WelcomeText.isDisplayed()){
             System.out.println("Displayed");
-        }//change
+        }//changekjhvbjkl
     }
 
 
