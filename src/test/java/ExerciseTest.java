@@ -19,22 +19,36 @@ public class ExerciseTest {
         }
 
         @Test
-        public void signup(){
+        public void Login(){
             WebElement signupLoginBtn = driver.findElement(By.linkText("Signup / Login"));
             signupLoginBtn.click();
 
-            WebElement nameField = driver.findElement(By.name("name"));
-            nameField.sendKeys("Mohamed");
 
-            WebElement email = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-            email.sendKeys("hassan@atos.net");
+            WebElement email = driver.findElement(By.xpath("//input[@data-qa='login-email']"));
+            email.sendKeys("ola.mohamed@atos.net");
 
-            WebElement signupBtn = driver.findElement(By.xpath("//button[text()='Signup']"));
-            signupBtn.click();
+
+            WebElement Password = driver.findElement(By.name("password"));
+            Password.sendKeys("olamohamed@1234");
+
+
+            WebElement loginBtn = driver.findElement(By.xpath("//button[text()='login']"));
+            loginBtn.click();
+
+// Assert that the username is displayed after login
+            if (usernameElement.getText().equals("Your Username")) {  // Replace with the expected username
+                System.out.println("Test Passed: User logged in successfully and username is displayed.");
+            } else {
+                System.out.println("Test Failed: Username did not appear after login."); // I found this on internet
+            }
+
+
+
         }
 
-
         @AfterMethod
+
+
         public void closeBrowser(){
         driver.quit();
         }
